@@ -33,12 +33,12 @@ class MySQLConnectorWithPandas :
     
     def make_connect (self, dbname) :
         print("start db connect!")
-        engine = create_engine( """mysql+pymysql://root:1234@147.43.122.34/"""+dbname+"""?charset=utf8""", encoding = "utf8")
+        engine = create_engine( """mysql+pymysql://root:/"""+dbname+"""?charset=utf8""", encoding = "utf8")
         self.conn = engine.connect()
 
     def make_connect_local (self, dbname) :
         print("start db connect!")
-        engine = create_engine( """mysql+pymysql://root:1234@localhost/"""+dbname+"""?charset=utf8""", encoding = "utf8")
+        engine = create_engine( """mysql+pymysql://root:/"""+dbname+"""?charset=utf8""", encoding = "utf8")
         self.conn = engine.connect()
 
     def read_by_query (self, query) :
